@@ -11,8 +11,6 @@ class OutputHandlerInterface(ABC):
         pass
 
 
-# Note 1: File handling details, functionality, and parameters are
-# bundled in a specialized component.
 class OutputToFile(OutputHandlerInterface):
     def __init__(self, filepath: str, mode: str = "w"):
         """
@@ -37,13 +35,7 @@ def output_data(data: List[Dict[str, str]],
     :return: 
     """
 
-    result_formatted = json.dumps(
-        data,
-        indent=4
-    )
-
-    # Note 2: Scope is now oblivious of low level output handling details. It
-    # only knows how to use the OutputHandlerInterface.handle() service.
+    result_formatted = json.dumps(data, indent=4)
     output_handler.handle(result_formatted)
 
 

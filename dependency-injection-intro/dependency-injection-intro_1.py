@@ -13,10 +13,7 @@ def output_data(data: List[Dict[str, str]], filepath: str, mode: str = "w"):
     :return: 
     """
 
-    result_formatted = json.dumps(
-        data,
-        indent=4
-    )
+    result_formatted = json.dumps(data, indent=4)
 
     with open(filepath, mode) as f:
         f.write(result_formatted)
