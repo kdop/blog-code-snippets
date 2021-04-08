@@ -21,8 +21,8 @@ def output_data(data: List[Dict[str, str]], filepath: str, mode: str = "w"):
 
 def main():
     data = [
-        {"name": "Alice"},
-        {"name": "Bob"}
+        {"name": "Alice", "location": "Tokyo"},
+        {"name": "Bob", "location": "Houston"}
     ]
 
     output_data(data, "output.json")
