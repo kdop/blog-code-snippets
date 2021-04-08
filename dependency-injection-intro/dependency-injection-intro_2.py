@@ -41,8 +41,8 @@ def output_data(data: List[Dict[str, str]],
 
 def main():
     data = [
-        {"name": "Alice", "birthdate": "2002-03-01"},
-        {"name": "Bob", "birthdate": "2005-11-17"}
+        {"name": "Alice"},
+        {"name": "Bob"}
     ]
 
     output_data(data, OutputToFile("output.json"))
