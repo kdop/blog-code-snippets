@@ -9,7 +9,7 @@ def output_data(data: List[Dict[str, str]], filepath: str, mode: str = "w"):
     Formats and saves result to specified file.
     :param data: The data.
     :param filepath: Absolute path of file where data will be saved.
-    :param mode: Mode in which the file is opened
+    :param mode: Mode in which the file is opened.
     :return: 
     """
 

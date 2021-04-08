@@ -16,7 +16,7 @@ class OutputToFile(OutputHandlerInterface):
         """
         OutputToFile constructor.
         :param filepath: Absolute path of file where data will be saved.
-        :param mode: Mode in which the file is opened
+        :param mode: Mode in which the file is opened.
         """
         self.filepath = filepath
         self.mode = mode
