@@ -1,8 +1,8 @@
 #!/usr/bin/python
 
 import json
-from typing import List, Dict
 from abc import ABC, abstractmethod
+from typing import Dict, List
 
 
 class OutputHandler(ABC):
@@ -43,7 +43,7 @@ def export_data(data: List[Dict[str, str]], output_handler: OutputHandler):
 def main():
     data = [
         {"name": "Alice", "location": "Tokyo"},
-        {"name": "Bob", "location": "Houston"}
+        {"name": "Bob", "location": "Houston"},
     ]
 
     export_data(data, OutputToFile("output.json"))

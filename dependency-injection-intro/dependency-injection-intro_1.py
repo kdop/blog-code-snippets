@@ -1,7 +1,7 @@
 #!/usr/bin/python
 
 import json
-from typing import List, Dict
+from typing import Dict, List
 
 
 def export_data(data: List[Dict[str, str]], filepath: str, mode: str = "w"):
@@ -20,7 +20,7 @@ def export_data(data: List[Dict[str, str]], filepath: str, mode: str = "w"):
 def main():
     data = [
         {"name": "Alice", "location": "Tokyo"},
-        {"name": "Bob", "location": "Houston"}
+        {"name": "Bob", "location": "Houston"},
     ]
 
     export_data(data, "output.json")
