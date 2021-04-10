@@ -5,7 +5,7 @@ import datetime
 
 def get_season_today(today: datetime) -> str:
     """
-    Finds what is the current season based on today's date.
+    Finds what the current season is based on today's date.
     :param today: Today's date.
     :return: The name of the season.
     """
