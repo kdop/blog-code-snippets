@@ -11,6 +11,11 @@ class OutputHandler(ABC):
         pass
 
 
+class OutputToConsole(OutputHandler):
+    def handle(self, data):
+        print(data)
+
+
 class OutputToFile(OutputHandler):
     def __init__(self, filepath: str, mode: str = "w"):
         """

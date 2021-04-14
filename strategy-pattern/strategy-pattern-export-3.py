@@ -49,6 +49,11 @@ class OutputHandler(ABC):
         pass
 
 
+class OutputToConsole(OutputHandler):
+    def handle(self, data):
+        print(data)
+
+
 class OutputToFile(OutputHandler):
     def __init__(self, filepath: str, mode: str = "w"):
         """
@@ -85,7 +90,7 @@ def main():
     ]
 
     export_data(data, JSONFormatHandler(), OutputToFile("output.json"))
-    export_data(data, CSVFormatHandler(), OutputToFile("output.csv"))
+    export_data(data, CSVFormatHandler(), OutputToConsole())
 
 
 if __name__ == "__main__":
