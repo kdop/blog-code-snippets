@@ -34,7 +34,9 @@ class CSVFormatHandler(FormatHandler):
         self.separator = separator
 
     def format(self, data):
-        return "\n".join([self.separator.join(list(row.values())) for row in data])
+        return "\n".join(
+            [self.separator.join(list(row.values())) for row in data]
+        )
 
 
 class OutputHandler(ABC):
@@ -98,7 +100,9 @@ def main():
         {"name": "Bob", "location": "Houston"},
     ]
 
-    format_name = "csv"  # imagine this is specified as script arg or "Save As" UX.
+    format_name = (
+        "csv"  # imagine this is specified as script arg or "Save As" UX.
+    )
 
     try:
         format_handler = FormatHandlerFactory.build(format_name)
