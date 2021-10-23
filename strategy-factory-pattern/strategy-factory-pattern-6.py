@@ -15,7 +15,7 @@ class FormatHandler(ABC):
         pass
 
 
-class JSONFormatHandler(FormatHandler):
+class FormatToJSON(FormatHandler):
     def __init__(self, indent: int = 4):
         """
         :param indent: Number of indentation spaces.
@@ -26,7 +26,7 @@ class JSONFormatHandler(FormatHandler):
         return json.dumps(data, indent=self.indent)
 
 
-class CSVFormatHandler(FormatHandler):
+class FormatToCSV(FormatHandler):
     def __init__(self, separator: str = ","):
         """
         :param separator: Column separator string.
@@ -85,8 +85,8 @@ def export_data(
 
 class FormatHandlerFactory(object):
     inventory = {
-        "json": JSONFormatHandler,
-        "csv": CSVFormatHandler,
+        "json": FormatToJSON,
+        "csv": FormatToCSV,
     }
 
     @staticmethod
@@ -94,23 +94,20 @@ class FormatHandlerFactory(object):
         return FormatHandlerFactory.inventory[item]()
 
 
-def main():
+def main(format_name: str):
     data = [
         {"name": "Alice", "location": "Tokyo"},
         {"name": "Bob", "location": "Houston"},
     ]
 
-    format_name = (
-        "csv"  # imagine this is specified as script arg or "Save As" UX.
-    )
-
     try:
         format_handler = FormatHandlerFactory.build(format_name)
     except KeyError:
-        format_handler = JSONFormatHandler()  # default
+        format_handler = FormatToJSON()  # default
 
     export_data(data, format_handler, OutputToConsole())
 
 
 if __name__ == "__main__":
-    main()
+    format_name_clean = "csv"  # eg. read this from argv
+    main(format_name_clean)

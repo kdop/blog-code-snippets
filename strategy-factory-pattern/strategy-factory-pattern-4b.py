@@ -19,8 +19,8 @@ def main():
         {"name": "Bob", "location": "Houston"},
     ]
 
-    export_data(data, JSONFormatHandler(), OutputToFile("output.json"))
-    export_data(data, CSVFormatHandler(), OutputToConsole())
+    export_data(data, FormatToJSON(), OutputToFile("output.json"))
+    export_data(data, FormatToCSV(), OutputToConsole())
 
 
 if __name__ == "__main__":

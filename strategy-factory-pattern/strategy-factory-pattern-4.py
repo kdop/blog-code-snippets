@@ -15,7 +15,7 @@ class FormatHandler(ABC):
         pass
 
 
-class JSONFormatHandler(FormatHandler):
+class FormatToJSON(FormatHandler):
     def __init__(self, indent: int = 4):
         """
         :param indent: Number of indentation spaces.
@@ -26,7 +26,7 @@ class JSONFormatHandler(FormatHandler):
         return json.dumps(data, indent=self.indent)
 
 
-class CSVFormatHandler(FormatHandler):
+class FormatToCSV(FormatHandler):
     def __init__(self, separator: str = ","):
         """
         :param separator: Column separator string.
@@ -89,8 +89,8 @@ def main():
         {"name": "Bob", "location": "Houston"},
     ]
 
-    export_data(data, JSONFormatHandler(), OutputToFile("output.json"))
-    export_data(data, CSVFormatHandler(), OutputToConsole())
+    export_data(data, FormatToJSON(), OutputToFile("output.json"))
+    export_data(data, FormatToCSV(), OutputToConsole())
 
 
 if __name__ == "__main__":

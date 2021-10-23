@@ -1,7 +1,7 @@
 class FormatHandlerFactory(object):
     inventory = {
-        "json": JSONFormatHandler,
-        "csv": CSVFormatHandler,
+        "json": FormatToJSON,
+        "csv": FormatToCSV,
     }
 
     @staticmethod
