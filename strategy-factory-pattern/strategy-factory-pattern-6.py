@@ -109,5 +109,5 @@ def main(format_name: str):
 
 
 if __name__ == "__main__":
-    format_name_clean = "csv"  # eg. read this from argv
+    format_name_clean = "csv"  # e.g. read this from argv
     main(format_name_clean)
