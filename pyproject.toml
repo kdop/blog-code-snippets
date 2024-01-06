@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "blog-code-snipets"
+version = "0.1.0"
+description = ""
+authors = ["Kostas <64cores@gmail.com>"]
+readme = "README.md"
+packages = [{include = "blog_code_snipets"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.6.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
